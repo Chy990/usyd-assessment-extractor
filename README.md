@@ -1,4 +1,4 @@
-**[中文](README.md)**
+**[中文](README-cn.md)**
 # Mini Project (20250310 Created)
 
 ## Operational Steps
