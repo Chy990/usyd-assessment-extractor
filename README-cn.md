@@ -6,9 +6,9 @@
 **提取**
 在`unit_codes.txt`内写入要查询的units，换行写，如：
 
-`AERO3360`
-`AERO3261`
-`AMME3500`
+`AERO3360`  
+`AERO3261`  
+`AMME3500`  
 
 保存，然后启动`collector`，`collector`将会快速提取并生成一个`task_info.html`文件，该文件方便使用者阅读。
 **查due**

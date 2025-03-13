@@ -5,9 +5,9 @@
 **Extract**
 Write unit codes in `unit_codes.txt`, e.g:
 
-`AERO3360`
-`AERO3261`
-`AMME3500`
+`AERO3360`  
+`AERO3261`  
+`AMME3500`  
 
 Save, then run `collector`, `collector` will generate `task_info.html` for user to read immediately.
 **Check Due**
