@@ -1,42 +1,39 @@
-**[English](README_en.html)**
+**[中文](README.md)**
+# Mini Project (20250310 Created)
 
-# 小项目 (20250310开始)
-
-## 操作流程
-**提取**
-在`unit_codes.txt`内写入要查询的units，换行写，如：
+## Operational Steps
+**Extract**
+Write unit codes in `unit_codes.txt`, e.g:
 
 `AERO3360`
 `AERO3261`
 `AMME3500`
 
-保存，然后启动`collector`，`collector`将会快速提取并生成一个`task_info.html`文件，该文件方便使用者阅读。
-**查due**
-确保`collector`已经被启动过，并且有`task_info.html`的文件存在。启动`due`，将会生成`due.html`，在里边会写出未来7日内的due，包括`Multiple weeks`类型的任务。
+Save, then run `collector`, `collector` will generate `task_info.html` for user to read immediately.
+**Check Due**
+Make sure you already runned `collector` or `task_info.html` exists. Run `due`, and it will write next 7 days dues into `due.html`, include `Multiple weeks` type assessments.
 
 
+## Remaining Description (Just record developed process and files property)
 
-## 剩余描述（该部分用于记录开发过程和文件属性）
+### Background
+Students always confused what units and assessments they will do in a new semester. In general, USYD student will learn 4 units (24 credit points) in a semester. If students want to make a clear plan, they will spend much time to serach every units web to found it.
 
-### 背景
-学生们总是搞不清楚在新学期里他们要学习哪些内容以及要参加哪些考试。一般来说，USYD的学生在一学期里需要获得 4 个科目（即 24 个学分点）。如果学生们想要制定一个清晰的计划，那需要花费大量时间和精力去学校官网查看每一个学科的考试内容。
+### Program Description
+This program can help USYD student to extract all units' assessments in `2025S1`, and generate as a `html` file that student can read conveniently. Meanwhile can help student to check dues in the next 7 days.
 
-### 程序简介
-该程序旨在可以快速帮助USYD学生提取出`2025S1`需要参加的考试和评估内容，并将内容总结在一个`html`里，方便学生浏览。同时还可以帮助学生查看当天往后7天内的所有due。
+### Files Description
+`collector.py`: Extractor (High efficiency and low storage)
+`due.py`: Extract next 7 days due
 
-### 文件描述
-`collector.py`：提取器（效率极高空间占用极小）
-`due.py`：后7日的due摘取
-
-
-### 更新记录
+### Updated record
 **2025.03.10**
-1. 实现最基础的扫描表格，并读取
+1. Implement the most basic scanning of the form and read it.
 
 **2025.03.11**
-1. 改善表格读取格式，新增`html`格式作为阅读版本
-2. 新增窗口显示读取进度
+1. Improve the table reading format and add `html` format as the reading version.
+2. Add window display for reading progress.
 
 **2025.03.13**
-1. 对整个读取方式进行大幅改善，效率预计提高3倍
-2. 文件整体轻量化，占用空间更小
+1. Significantly improve the entire reading method, and the efficiency is expected to increase by 3 times.
+2. The file is overall lightweight and occupies less space.

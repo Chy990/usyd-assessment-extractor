@@ -1,32 +1,12 @@
-2025-03-13 16:11:19,756 - INFO - Start collector
-2025-03-13 16:11:20,282 - INFO - task_info.md clear
-2025-03-13 16:11:20,552 - ERROR - Cannot find tbody for AMME3500
-2025-03-13 16:11:20,552 - INFO - Saved AMME3500 assessment into task_info.md
-2025-03-13 16:11:20,759 - ERROR - Cannot find tbody for ENGG3112
-2025-03-13 16:11:20,759 - INFO - Saved ENGG3112 assessment into task_info.md
-2025-03-13 16:11:20,830 - INFO - Markdown convert to task_info.html
-2025-03-13 16:15:31,746 - INFO - Start collector
-2025-03-13 16:15:32,584 - ERROR - Cannot find tbody for AMME3500
-2025-03-13 16:15:32,585 - INFO - Saved AMME3500 assessment into resources\task_info.md
-2025-03-13 16:15:32,764 - ERROR - Cannot find tbody for ENGG3112
-2025-03-13 16:15:32,765 - INFO - Saved ENGG3112 assessment into resources\task_info.md
-2025-03-13 16:15:32,828 - INFO - Markdown convert to task_info.html
-2025-03-13 16:15:58,698 - INFO - Start collector
-2025-03-13 16:15:59,223 - INFO - resources\task_info.md clear
-2025-03-13 16:15:59,645 - ERROR - Cannot find tbody for AMME3500
-2025-03-13 16:15:59,645 - INFO - Saved AMME3500 assessment into resources\task_info.md
-2025-03-13 16:15:59,838 - ERROR - Cannot find tbody for ENGG3112
-2025-03-13 16:15:59,839 - INFO - Saved ENGG3112 assessment into resources\task_info.md
-2025-03-13 16:16:00,855 - ERROR - Cannot find tbody for AERO3261
-2025-03-13 16:16:00,855 - INFO - Saved AERO3261 assessment into resources\task_info.md
-2025-03-13 16:16:02,031 - ERROR - Cannot find tbody for AERO3360
-2025-03-13 16:16:02,032 - INFO - Saved AERO3360 assessment into resources\task_info.md
-2025-03-13 16:16:02,223 - ERROR - Cannot find tbody for AMME2500
-2025-03-13 16:16:02,224 - INFO - Saved AMME2500 assessment into resources\task_info.md
-2025-03-13 16:16:02,300 - INFO - Markdown convert to task_info.html
-2025-03-13 16:18:59,161 - INFO - Start due
-2025-03-13 16:18:59,162 - INFO - Read task_info.md file.
-2025-03-13 16:19:19,534 - INFO - Start due
-2025-03-13 16:19:19,535 - INFO - Read task_info.md file.
-2025-03-13 16:19:19,541 - INFO - Writing due.md
-2025-03-13 16:19:19,542 - INFO - Writing due.html
+2025-03-13 21:09:24,469 - INFO - Start collector
+2025-03-13 21:09:25,528 - ERROR - Cannot find tbody for ENGG2112
+2025-03-13 21:09:25,528 - INFO - Saved ENGG2112 assessment into resources\task_info.md
+2025-03-13 21:09:25,784 - ERROR - Cannot find tbody for ENGG3112
+2025-03-13 21:09:25,784 - INFO - Saved ENGG3112 assessment into resources\task_info.md
+2025-03-13 21:09:25,942 - ERROR - Cannot find tbody for AMME2500
+2025-03-13 21:09:25,943 - INFO - Saved AMME2500 assessment into resources\task_info.md
+2025-03-13 21:09:26,108 - INFO - Markdown convert to task_info.html
+2025-03-13 21:09:31,619 - INFO - Start due
+2025-03-13 21:09:31,620 - INFO - Read task_info.md file.
+2025-03-13 21:09:31,631 - INFO - Writing due.md
+2025-03-13 21:09:31,632 - INFO - Writing due.html
