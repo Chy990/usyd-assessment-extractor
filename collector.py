@@ -10,7 +10,7 @@ from PyQt5.QtGui import QIcon
 import requests
 from bs4 import BeautifulSoup 
 
-from datetime import datetime, timedelta # 给due.py用的库
+from datetime import datetime, timedelta # provided for due.py
 
 RESOURCES_DIR=Path("resources")
 RESOURCES_DIR.mkdir(exist_ok=True)
@@ -26,14 +26,14 @@ unit_codes_file = Path("unit_codes.txt")
 
 if unit_codes_file.exists():
     with unit_codes_file.open("r") as file:
-        unit_codes = [line.strip() for line in file if line.strip()]  # 读取非空行
+        unit_codes = [line.strip() for line in file if line.strip()]  
 else:
-    unit_codes = []  # 文件不存在时，unit_codes 为空
+    unit_codes = []  # if no file exists, save empty
 
-# print(unit_codes)  # 打印检查
+# print(unit_codes)  # print check
 
 # table = '//*[@id="assessment-table"]'
-output_file = RESOURCES_DIR / "task_info.md"  # 统一存放所有课程的数据
+output_file = RESOURCES_DIR / "task_info.md" 
 html_output_file=Path("task_info.html")
 
 HEADERS = {
@@ -48,17 +48,17 @@ def extract_table_content(html_content, unit_code, output_file):
         logging.error(f"Cannot found {unit_code} table")
         return 
     
-    # 提取表头
+    # extract table head
     thead = table.find('thead')
     headers = [th.get_text(strip=True) for th in thead.find_all('th')]
 
-    # 追加模式 ('a')，不会覆盖之前的内容
+    # continue write 'a'
     with open(output_file, 'a', encoding='utf-8') as md_file:
         md_file.write(f"\n## {unit_code}\n\n")
         md_file.write('| ' + ' | '.join(headers) + ' |\n')
         md_file.write('| ' + ' | '.join(['---'] * len(headers)) + ' |\n')
 
-        # 遍历所有 <tbody>
+        # read all <tbody>
         all_tbody = table.find_all('tbody')
         if not all_tbody:
             logging.error(f"Cannot find tbody for {unit_code}")
@@ -82,7 +82,7 @@ def extract_table_content(html_content, unit_code, output_file):
             logging.error(f"Cannot find tbody for {unit_code}")
 
 def convert_markdown_to_html(md_file, html_file):
-    """将 Markdown 文件转换为 HTML 并添加 CSS"""
+    """convert markdown to html with css"""
     with open(md_file, 'r', encoding='utf-8') as f:
         markdown_text = f.read()
 
@@ -120,8 +120,8 @@ def convert_markdown_to_html(md_file, html_file):
 
 
 class ScraperThread(QThread):
-    update_progress = pyqtSignal(int, str)  # 信号用于更新进度条和标签
-    finished = pyqtSignal()  # 信号用于通知任务完成
+    update_progress = pyqtSignal(int, str) 
+    finished = pyqtSignal() 
 
     def __init__(self, unit_codes, output_file,html_output_file):
         super().__init__()
@@ -155,9 +155,9 @@ class ScraperThread(QThread):
                 logging.warning(f"Unit {unit_code} not found (404)")
                 return 
             
-            response.raise_for_status()  # 确保请求成功
+            response.raise_for_status() 
             
-            # 保存 HTML 方便调试
+            # save html
             html_output_file.write_text(response.text, encoding="utf-8")
 
             extract_table_content(response.text, unit_code, output_file)
