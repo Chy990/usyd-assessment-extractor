@@ -13,7 +13,7 @@ RESOURCE_DIR=Path("resources")
 RESOURCE_DIR.mkdir(exist_ok=True)
 due_file=RESOURCE_DIR / "due.md"
 
-# 读取 tasks.md 文件
+# read task_info.md
 def read_tasks_file(filename):
     with open(filename, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -32,7 +32,7 @@ def parse_tasks(lines):
                 data.append((course, parts[1], parts[2], parts[3]))
     return data
 
-# 获取当前日期
+# gain today date
 today = datetime.today()
 
 def get_due_within_days(data, days):
@@ -51,15 +51,15 @@ def get_due_within_days(data, days):
                 continue
     return sorted(upcoming, key=lambda x: datetime.strptime(x[2], "%d %b %Y") if x[2] not in ["Multiple weeks", "Formal exam period"] else today)
 
-# 读取并解析 tasks.md 文件
+
 tasks_lines = read_tasks_file("resources/task_info.md")
 logging.info("Read task_info.md file.")
 tasks_data = parse_tasks(tasks_lines)
 
-# 获取未来 7 天的 due 任务
+# gain dues for next 7 days
 upcoming_tasks = get_due_within_days(tasks_data, 7)
 
-# 生成 markdown 文件内容
+# generate due.md
 due_text = "## Next Week Due\n\n"
 html_text = """<html><head><title>Upcoming Due Tasks</title></head><body>
 <h2>Upcoming Due Tasks in Next 7 Days</h2>
@@ -71,14 +71,14 @@ for task in upcoming_tasks:
 
 html_text += "</ul></body></html>"
 
-# 写入 markdown 文件
+# write due.md
 with due_file.open("w", encoding="utf-8") as f:
     f.write(due_text)
     logging.info("Writing due.md")
 
-# 写入 HTML 文件
+# write due.html
 with open("due.html", "w", encoding="utf-8") as f:
     f.write(html_text)
     logging.info("Writing due.html")
 
-# print("due.md 和 due.html 文件已更新！")
+# print("due.md 和 due.html 文件已更新！") # Just for final check
